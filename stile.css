@@ -1,0 +1,287 @@
+/* Кнопки-переключатели из чекбоксов */
+
+.paper-btn {
+  display: inline-block;
+  margin: 58px 12px;
+}
+
+.paper-btn .label_1 {
+  display: inline-block;
+  width: 80px;
+  border-radius: 3px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: #616161;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+
+  transition-duration: .3s;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.paper-btn .input_1 {
+  display: none;
+}
+
+.paper-btn .input_1:checked~.label_1 {
+  color: #f1f1f1;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+
+.paper-btn-true .input_1:checked~.label_1 {
+  background-color: #00e676;
+}
+
+.paper-btn-false input:checked~.label_1 {
+  background-color: #ff5252;
+}
+
+
+/* Стилизация чекбоксов */
+.wrapp_2 {
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+.label_2 {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.label_2::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -44px;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #5a5a5a;
+  content: "";
+
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.input_2[type="checkbox"] {
+  display: none;
+}
+
+.input_2[type="checkbox"]:checked~.label_2::before {
+  display: block;
+  width: 21px;
+  height: 10px;
+  border-color: #00bad2;
+  border-top-style: none;
+  border-right-style: none;
+
+  transform: rotate(-45deg);
+}
+
+/* Стилизация  радио-кнопок */
+.label_3 {
+  position: relative;
+  cursor: pointer;
+}
+
+.label_3::before,
+.label_3::after {
+  position: absolute;
+  top: 0;
+  left: -42px;
+  border-radius: 50%;
+  content: "";
+}
+
+.label_3::before {
+  width: 12px;
+  height: 12px;
+  border: solid 2px #5a5a5a;
+}
+
+.label_3::after {
+  width: 16px;
+  height: 16px;
+  background-color: #00bad2;
+  transform: scale(0);
+
+  transition-duration: 0.28s;
+  transition-property: transform;
+}
+
+.input_3[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked~label::after {
+  transform: scale(1.1);
+}
+
+/* Стилизация  радио-кнопок */
+.label_4 {
+  position: relative;
+  display: inline-block;
+  max-width: 100px;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+
+.label_4::before,
+.label_4::after {
+  position: absolute;
+  display: block;
+  content: "";
+}
+
+.input_4[type="checkbox"] {
+  display: none;
+}
+
+.label_4::before {
+  width: 32px;
+  height: 1px;
+  border-top: 1px solid #5a5a5a;
+  top: 7px;
+  left: 108px;
+}
+
+.label_4::after {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #5a5a5a;
+  border-radius: 50%;
+  top: 0;
+  left: 100px;
+  background-color: #ffffff;
+
+  transition-duration: 200ms;
+  transition-timing-function: ease-in;
+}
+
+input[type="checkbox"]:checked~label::after {
+  transform: translateX(32px);
+  border-color: #0f9d58;
+  background-color: #0f9d58;
+}
+
+
+/* Иконка-трансформер */
+
+.menu-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.menu-icon span {
+  display: block;
+  width: 50px;
+  height: 12px;
+  background-color: #40d47e;
+
+  transition-duration: .7s;
+  transition-timing-function: ease-in-out;
+}
+
+.menu-icon span::before,
+.menu-icon span::after {
+  display: block;
+  width: 100%;
+  content: "";
+  height: 12px;
+  background-color: #40d47e;
+}
+
+.menu-icon span::before {
+  transform: translate(0, -24px);
+  transition-duration: .7s;
+  transition-timing-function: ease-in-out;
+}
+
+.menu-icon span::after {
+  transform: translate(0, 12px);
+  transition-duration: .7s;
+  transition-timing-function: ease-in-out;
+}
+
+.menu-icon-open span::before,
+.menu-icon-open span::after {
+  width: 60%;
+}
+
+.menu-icon-open span {
+  transform: rotate(180deg);
+}
+
+.menu-icon-open span::before {
+  transform: translate(45px, -14px) rotate(45deg);
+}
+
+.menu-icon-open span::after {
+  transform: translate(45px, 2px) rotate(-45deg);
+}
+
+
+/* Текстовое поле ввода */
+.label-box {
+  position: relative;
+  width: 270px;
+}
+
+.input_5 {
+  box-sizing: border-box;
+  padding: 5px;
+  width: 270px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+.label_5 {
+  color: #757575;
+  font-size: 18px;
+  pointer-events: none;
+  position: absolute;
+  top: -36px;
+
+  transition-duration: 0.2s;
+}
+
+
+input:focus~.label-box .label_5,
+input:valid~.label-box .label_5 {
+  font-size: 14px;
+  transform: translateY(-20px);
+}
+
+input:focus~.label-box::before,
+input:focus~.label-box::after {
+  width: 50%;
+}
+
+.label-box::before,
+.label-box::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #757575;
+  bottom: 1px;
+
+  transition-duration: 0.2s;
+  transition-property: width;
+}
+
+.label-box::before {
+  left: 50%;
+}
+
+.label-box::after {
+  right: 50%;
+}
